@@ -1,0 +1,13 @@
+services:
+  imgserv:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports: "3003:80"
+    volumes:
+      - ./assets:/app/assets
+    networks:
+      - deepwater_web
+networks:
+  deepwater_web:
+    external: true
